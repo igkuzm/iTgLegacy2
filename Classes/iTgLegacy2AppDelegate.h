@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+enum {
+	ALLERT_TYPE_ASK_INPUT,
+	ALLERT_TYPE_YES_NO,
+};
+
 @interface iTgLegacy2AppDelegate : NSObject <UIApplicationDelegate> {
 	
 	IBOutlet UIWindow *window;
@@ -22,9 +27,16 @@
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) UINavigationController *navigationController;
 
+@property NSInteger allertType;
+//@property (strong, nonatomic) void (^askInput_onDone)(NSString *text);
+//@property (strong, nonatomic) void (^askYesNo_onYes)();
+
+
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
 - (NSManagedObjectModel *)managedObjectModel;
 - (NSManagedObjectContext *)managedObjectContext;
+
+-(void)showMessage:(NSString *)msg;
 
 @end
 

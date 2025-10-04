@@ -106,8 +106,8 @@
     url = [NSURL fileURLWithPath: [documentsFolder stringByAppendingPathComponent: @"tg.sqlite"]];
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
     if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:nil error:&error]){
-        //[[NSApplication sharedApplication] presentError:error];
-    }    
+        [self showMessage:error.description];
+	}   
 	
     return persistentStoreCoordinator;
 }
@@ -144,6 +144,68 @@
 }
 
 
+-(void)showMessage:(NSString *)msg {
+	UIAlertView *alert = 
+	[[UIAlertView alloc]initWithTitle:@"" 
+							  message:msg 
+							 delegate:nil 
+					cancelButtonTitle:@"Закрыть" 
+					otherButtonTitles:nil];
+	
+	[alert show];
+}
+/*
+-(void)askInput:(NSString *)msg onDone:(void (^)(NSString *text))onDone{
+	self.askInput_onDone = onDone;
+	self.allertType = ALLERT_TYPE_ASK_INPUT;
+	UIAlertView *alert = 
+	[[UIAlertView alloc]initWithTitle:@"" 
+							  message:msg 
+							 delegate:self 
+					cancelButtonTitle:@"OK" 
+					otherButtonTitles:nil];
+	
+	[alert setAlertViewStyle:UIAlertViewStylePlainTextInput]; 
+	[alert show];
+}
 
+-(void)askYesNo:(NSString *)msg onYes:(void (^)())onYes{
+	self.allertType = ALLERT_TYPE_YES_NO;
+	self.askYesNo_onYes = onYes;
+	UIAlertView *alert = 
+	[[UIAlertView alloc]initWithTitle:@"" 
+							  message:msg 
+							 delegate:self 
+					cancelButtonTitle:@"cancel" 
+					otherButtonTitles:@"OK", nil];
+	
+	[alert show];
+}
 
+-(void)alertView:(UIAlertView *)alertView 
+clickedButtonAtIndex:(NSInteger)buttonIndex
+{	
+	switch (self.allertType) {
+		case ALLERT_TYPE_ASK_INPUT:
+		{
+			UITextField *textField = [alertView textFieldAtIndex:0];
+			if (self.askInput_onDone)
+				self.askInput_onDone(textField.text);
+		}
+			break;
+		case ALLERT_TYPE_YES_NO:
+		{
+			if (buttonIndex == 1){
+				if (self.askYesNo_onYes)
+					self.askYesNo_onYes();
+			}
+		}
+			break;
+			
+		default:
+			break;
+	}
+	
+}
+*/
 @end

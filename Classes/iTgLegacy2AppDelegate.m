@@ -8,6 +8,7 @@
 
 #import "iTgLegacy2AppDelegate.h"
 #import "RootViewController.h"
+#import "ConnectionManager.h"
 #import "tests.h"
 
 
@@ -33,8 +34,11 @@
 	
 	[self persistentStoreCoordinator];
 	
-	tests *_t = [[tests alloc]init];
-	[_t performMTXTest];
+	ConnectionManager *cm = [[ConnectionManager alloc]init];
+	[cm connect];
+	
+	//tests *_t = [[tests alloc]init];
+//	[_t performMTXTest];
 	
 }
 

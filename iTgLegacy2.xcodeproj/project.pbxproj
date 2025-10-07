@@ -22,6 +22,8 @@
 		AFAF28822E91058B00AF3E67 /* Peer.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAF28812E91058B00AF3E67 /* Peer.m */; };
 		AFAF288B2E91060100AF3E67 /* Dialog.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAF288A2E91060100AF3E67 /* Dialog.m */; };
 		AFAF28902E91066500AF3E67 /* ChatPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAF288F2E91066500AF3E67 /* ChatPhoto.m */; };
+		AFDFE2832E95C61D00F93B60 /* pub.pkcs in Resources */ = {isa = PBXBuildFile; fileRef = AFDFE2822E95C61D00F93B60 /* pub.pkcs */; };
+		AFDFE2882E95C6C800F93B60 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFDFE2872E95C6C800F93B60 /* ConnectionManager.m */; };
 		AFE771012E95C092006B1E79 /* libmtx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE770F32E95C05E006B1E79 /* libmtx.a */; };
 		AFE771052E95C0D5006B1E79 /* clock_gettime.c in Sources */ = {isa = PBXBuildFile; fileRef = AFE771042E95C0D5006B1E79 /* clock_gettime.c */; };
 		AFE771212E95C0E5006B1E79 /* tgt.c in Sources */ = {isa = PBXBuildFile; fileRef = AFE771062E95C0E5006B1E79 /* tgt.c */; };
@@ -62,7 +64,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AFE770F22E95C05E006B1E79 /* mtx */;
+			remoteGlobalIDString = AFE770F22E95C05E006B1E79;
 			remoteInfo = mtx;
 		};
 /* End PBXContainerItemProxy section */
@@ -93,6 +95,9 @@
 		AFAF288A2E91060100AF3E67 /* Dialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dialog.m; sourceTree = "<group>"; };
 		AFAF288E2E91066500AF3E67 /* ChatPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatPhoto.h; sourceTree = "<group>"; };
 		AFAF288F2E91066500AF3E67 /* ChatPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatPhoto.m; sourceTree = "<group>"; };
+		AFDFE2822E95C61D00F93B60 /* pub.pkcs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pub.pkcs; path = libtg2/pub.pkcs; sourceTree = "<group>"; };
+		AFDFE2862E95C6C800F93B60 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
+		AFDFE2872E95C6C800F93B60 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
 		AFE770F32E95C05E006B1E79 /* libmtx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmtx.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE771042E95C0D5006B1E79 /* clock_gettime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = clock_gettime.c; path = "libtg2/mtx/darwin-posix-rt/clock_gettime.c"; sourceTree = "<group>"; };
 		AFE771062E95C0E5006B1E79 /* tgt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = tgt.c; path = libtg2/mtx/src/tgt.c; sourceTree = "<group>"; };
@@ -158,6 +163,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AFDFE2862E95C6C800F93B60 /* ConnectionManager.h */,
+				AFDFE2872E95C6C800F93B60 /* ConnectionManager.m */,
 				AFAF28C32E9108E200AF3E67 /* CoreData */,
 				1D3623240D0F684500981E51 /* iTgLegacy2AppDelegate.h */,
 				1D3623250D0F684500981E51 /* iTgLegacy2AppDelegate.m */,
@@ -201,6 +208,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AFDFE2822E95C61D00F93B60 /* pub.pkcs */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -373,6 +381,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
+				AFDFE2832E95C61D00F93B60 /* pub.pkcs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +402,7 @@
 				AFAF288B2E91060100AF3E67 /* Dialog.m in Sources */,
 				AFAF28902E91066500AF3E67 /* ChatPhoto.m in Sources */,
 				AFE771582E95C261006B1E79 /* tests.m in Sources */,
+				AFDFE2882E95C6C800F93B60 /* ConnectionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

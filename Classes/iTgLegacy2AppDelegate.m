@@ -8,6 +8,7 @@
 
 #import "iTgLegacy2AppDelegate.h"
 #import "RootViewController.h"
+#import "tests.h"
 
 
 @implementation iTgLegacy2AppDelegate
@@ -31,6 +32,9 @@
 	[window makeKeyAndVisible];
 	
 	[self persistentStoreCoordinator];
+	
+	tests *_t = [[tests alloc]init];
+	[_t performMTXTest];
 	
 }
 
